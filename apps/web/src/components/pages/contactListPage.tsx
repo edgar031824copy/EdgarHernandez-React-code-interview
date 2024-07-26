@@ -45,8 +45,9 @@ export const ContactListPage: React.FC = () => {
           justifyContent="end"
           pl={8}
         >
-          {fetching && <LinearProgress sx={{ width: '100%' }} />}
-          {!fetching && (
+          {fetching ? (
+            <LinearProgress sx={{ width: '100%' }} />
+          ) : (
             <Typography variant="caption">
               Displaying {contacts.data.length} out of {contacts.totalCount}{' '}
               total contacts
